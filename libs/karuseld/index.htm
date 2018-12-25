@@ -1,0 +1,118 @@
+<!--
+Пример создан сайтом http://blogjquery.ru/karusel-na-jquery-s-avtoprokrutkoj/
+-->
+<script type="text/javascript" src="jquery-1.6.4.min.js"></script>
+<script type="text/javascript" src="jquery-ui.min.js"></script>
+<script>
+$(window).bind('load', function(){
+$().prepare_slider();
+$('#slider_list > li').over();
+var slider_link = $('.slider .box-right a');
+var slider_link_index = 1;
+var slider_count = $('#slider_list > li').size();
+function slider_intro(){
+//if(slider_link_index <= slider_count){
+slider_link.trigger('click');
+slider_link_index++;
+setTimeout(function(){slider_intro()}, 4000);     //время перелистования слайдеров
+//}
+}
+setTimeout(function(){slider_intro()}, 4000)      //при запуске карусели - через сколько ее прокрутить
+//Чтобы отключить автопрокрутку, надо удалить строку 20 - прокрутка будет только по стрелкам
+});
+
+</script>
+
+<div class="slider">
+<div class="box-left"><a id="left_but">&nbsp;</a></div>
+<div class="box-top">
+<ul id="slider_list" >
+<li><a href="/"><img src="images/product4.jpg">Quantum Reax Baitcast Reel</a></li>
+<li><a href="/"><img src="images/product5.jpg">Dimension Low Profile Baitcast Reel</a></li>
+<li><a href="/"><img src="images/product6.jpg">Quantum Catalyst spinning Reel</a></li>
+<li><a href="/"><img src="images/product7.jpg">Alpha Spinning Reel</a></li>
+<li><a href="/"><img src="images/product8.jpg">Quantum Accurist PT Baitcaster</a></li>
+<li><a href="/"><img src="images/product9.jpg">Quantum Kinetic Baitcast Reel</a></li>
+<li><a href="/"><img src="images/product10.jpg">Quantum Tour Baitcast Reel</a></li>
+</ul>
+</div>                                   
+<div class="box-right"><a id="right_but">&nbsp;</a></div>
+</div>
+
+
+
+<style>
+/* Размеры слайдера */
+.slider {
+width: 830px;
+height: 200px;
+overflow: hidden;
+position: relative;
+padding: 17px 67px 6px 53px;
+margin-bottom: 10px;
+background: #893F8A;
+margin: 0px;}
+.box-top {
+width: 830px;
+overflow: hidden;
+color: #616161;
+float: left;
+position: relative;
+left: 0;}
+/* Размеры картинок: li должен быть больше по высоте, чем img, чтобы влезло описание*/
+.box-top ul li {
+width: 200px;
+height: 185px;
+padding: 0 10px 0 0;
+display: inline-block;
+float: left;    text-align: center;}
+.slider .box-top img {
+width: 200px;
+height: 145px;}
+
+.box-left {
+width: 55px;
+padding: 0;
+margin: 64px 0 0 0;
+text-align: center;
+font-size: 0;
+line-height: 0;
+left: 10px;
+position: absolute;
+z-index: 200;}
+.box-left a {
+width: 38px;
+height: 38px;
+overflow: hidden;
+text-indent: 50px;
+background: url(images/prev.gif) no-repeat 0 0;
+display: block;
+cursor: pointer;}
+.box-top ul {
+list-style: none;
+padding: 0;}
+.box-top a {
+color: #fff;
+text-decoration: none;font-size: 12px;}
+.box-top img {
+margin-bottom: 3px;}
+.box-right {
+width: 56px;
+padding: 0;
+margin: 64px 0 0 0;
+text-align: right;
+font-size: 0;
+line-height: 0;
+position: absolute;
+right: 23px;
+z-index: 200;}
+.box-right a {
+width: 38px;
+height: 38px;
+overflow: hidden;
+text-indent: 50px;
+background: url(images/next.gif) no-repeat 0 0;
+display: block;
+float: right;
+cursor: pointer;}
+</style>
