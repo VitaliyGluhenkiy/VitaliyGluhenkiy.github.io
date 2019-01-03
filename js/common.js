@@ -24,6 +24,19 @@ $(function() {
 		smartSpeed: 700,
 	});
 
+	$(document).ready(function(){
+		$("#my-menu").on("click","a", function (event) {
+
+			event.preventDefault();
+
+			var id  = $(this).attr('href'),
+
+				top = $(id).offset().top;
+
+			$('body,html').animate({scrollTop: top}, 1500);
+		});
+	});
+
 	$('.button1').click(function(){
 			$('.shadow-services2').slideToggle("fast");	// 		$('#button2').click(function(){
 	// 			$('.shadow-services2').slideToggle("fast", function(){
