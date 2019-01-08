@@ -50,10 +50,10 @@ body
 		    background-color: darken($accent, 30%)
 		    &::after
 		        opacity: .32
-body #my-header .site-header .topLine .hamburger
-	right: 6%
+#my-header .site-header .topLine .hamburger
+	right: 20%
 	position: absolute
-	top: 0.5%
+	top: 10%
 	z-index: 9
 .mm-listview
 	text-transform: uppercase
@@ -65,13 +65,67 @@ body #my-header .site-header .topLine .hamburger
 
 #my-menu
 	position: absolute
-#my-header
-	height: 100vh
+	font-size: 14px
+	line-height: 20px
+	text-transform: uppercase
+	height: 100%
+	width: 0
+	top: 0
+	right: 0
+	overflow-x: hidden
+	transition: 0.5s
+	padding-top: 5%
+	padding-right: 20px
+	z-index: 1
+	
+	ul 
+		list-style-type: none
+		background-color: white
+		li
+			border-bottom-width: 1px
+			border-bottom-style: solid
+			border-color: rgba(0,0,0,.1)
+			&:hover
+				background-color: #b2f2ee
+				text-decoration: none
+				
+
+		img 
+			margin-left: 35%
+			margin-bottom: 7%
+    		
+		a 
+			display: block
+			text-decoration: none
+			color: inherit
+			letter-spacing: 1px
+			line-height: 2
+			border-bottom-style: solid 1px 
+			padding: 10px 10px 10px 20px
+			
+
+	
+	// text-decoration: none
+	
+	
+
+	// .sidenav a:hover 
+	// color: #f1f1f1
+	
+	// .sidenav .closebtn 
+	// position: absolute
+	// top: 0
+	// right: 25px
+	// font-size: 36px
+	// margin-left: 50px
+		
+// #my-header
+// 	height: 100vh
 
 .web-logo
 	position: absolute
-	left: 10%
-	top: 0.6%
+	left: 20%
+	top: 10%
 	img
 		border: solid 4px 
 		border-color: black
@@ -84,6 +138,7 @@ body #my-header .site-header .topLine .hamburger
 	.web-title
 		margin-bottom: 151px
 		p
+			margin: 0
 			display: block
 			position: relative
 			text-transform: uppercase
@@ -93,7 +148,7 @@ body #my-header .site-header .topLine .hamburger
 			padding-top: 300px
 			text-shadow: #cdced0 4px 4px 4px
 			letter-spacing: 8px
-			z-index: 2
+			z-index: 0
 		.rectangle
 			width: 253px
 			height: 53px
@@ -175,15 +230,18 @@ body #my-header .site-header .topLine .hamburger
 			.foto
 				.img 
 					position: relative
+					width: 100%
 					&:hover 
 						.info
-							display: block
+							opacity: 1
+							transition: all 1s
 					.info
 						position: absolute
 						top: 42%
 						right: 0
-						left: 6%
-						display: none
+						// left: 6%
+						opacity: 0
+						transition: all 0.5s
 						width: 334px
 						text-align: left
 						&:after
@@ -269,6 +327,7 @@ body #my-header .site-header .topLine .hamburger
 			.owl-prev , .owl-next
 				height: 64px
 				width: 64px
+				outline: none
 				&:hover
 					background-color: #71f6eb
 .sponsor
@@ -324,7 +383,8 @@ body #my-header .site-header .topLine .hamburger
 			background-color: transparent
 			margin-left: 40px
 			border-color: white
-			opacity: .3
+			opacity: .6
+			color: white
 		.massege
 			margin-top: 30px
 		img
